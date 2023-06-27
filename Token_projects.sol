@@ -19,9 +19,9 @@ pragma solidity 0.8.18;
 contract MyToken {
 
     // public variables here
-    string public TokenName = "Sachin";
-    string public TokenAbbrv = "Sk";
-    uint public TotalSupply = 0;
+    string public tokenName = "SachinKumar";
+    string public abbrv = "Sk";
+    uint public totalSupply = 0;
     
 
     // mapping variable here
@@ -29,7 +29,7 @@ contract MyToken {
 
     // mint function
     function mint(address _address, uint _value) public {
-        TotalSupply += _value;
+        totalSupply += _value;
         balances[_address] += _value;  
 
     }
@@ -37,7 +37,7 @@ contract MyToken {
     // burn function
     function burn( address _address,uint _value) public {
         if( balances[_address] >= _value){
-            TotalSupply -= _value;
+            totalSupply -= _value;
             balances[_address] -= _value;
         }
         
